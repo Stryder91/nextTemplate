@@ -2,8 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Poppins";
+  src: url("/Poppins/Poppins-Regular.ttf");
+}
+
 .container {
-  padding: 0 2rem;
+  padding: 0 3rem;
 }
 
 .main {
@@ -14,4 +19,41 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+
+html {
+  scroll-behavior: smooth; 
+}
+body {
+  font-family: 'Poppins';
+}
+
+/*Classes*/
+
+.grow {
+  transition: all .2s ease-in-out;
+}
+.grow:hover { 
+  transform: scale(1.08); 
+}
+
+/*HEADER*/
+.header {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  background-color: #2F2C69;
+  padding: 15px 20px;
+  flex-direction: 0 1 auto;
+}
+
+
+.header a:hover {
+  color: silver;
+}
+
+.nav-header > a {
+  margin: 0 10px;
+  font-weight: bold;
 }
