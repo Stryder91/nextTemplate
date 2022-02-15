@@ -28,7 +28,7 @@ export const Header = () => {
 		<header className="header">
 			<NavHeader routes={routes}/>
 			<div className='lg:flex'>
-				<div className='lg:hidden'>
+				<div className='items-center lg:hidden'>
 					<DDown onlyMobile={true} routes={routes} />
 				</div>
 				<div className='hidden lg:block lg:flex'>
