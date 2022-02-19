@@ -7,13 +7,28 @@ Template to create Dapp (Decentralized applications) with EVM compatibility.
 - Basic script deployment
 - Tailwindcss for css work
 - React Context to handle state of the app
+- Mongodb database for simple CRUD with moongoose ORM
 
-Cd in repo : 
-$ yarn (or npm i)
-$ npx hardhat compile
+# Set up
 
--> get contract address and flag it into utils/ethers
-
-Set up .env based upon env.example:
+1) Set up *.env* based upon *env.example*:
 - PRIVATE_KEY from a Metamask account
 - API Rpc like Rinkeby, Mumbai, Polygon, Ethereum 
+- Provide a mongodb_uri if database needed
+
+2) Cd in repo : 
+```
+$ yarn (or npm i)
+$ npx hardhat compile
+```
+-> get contract address and flag it into utils/ethers
+
+3) Run server
+```
+$ npm run dev
+```
+
+# Deploy contracts
+
+
+
