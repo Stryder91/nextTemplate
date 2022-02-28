@@ -125,3 +125,7 @@ export const sliceAcc = (acc) => {
   return slicedAcc;
 }
 
+export const toWei = nb => {
+  return ethers.utils.parseEther(nb);
+}
+
