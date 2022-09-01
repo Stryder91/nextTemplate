@@ -89,6 +89,10 @@ export const getChainNetwork = async () => {
 			return ["Goerli",    windowChain];	
 		case '0x89':
 			return ["Polygon",   windowChain];	
+    case '0x61':
+      return ["SmartChain Testnet",    windowChain];	
+    case '0x38':
+      return ["Binance",   windowChain];
     case '0x13881':
       return ["Mumbai",    windowChain];	
 		case '0xa86a':

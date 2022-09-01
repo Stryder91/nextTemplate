@@ -1,0 +1,46 @@
+
+// const addrEth = [
+//   '0x94d5e1960949bB9D8f6F67a5f1a9410E7585fEDa',
+//   '0x37A279FB203B8F5dB514fD7AE77f7C4618286300',
+//   '0x8eef73a3637FAe8Ee5115D9D2E5650b18453c930',
+// ];
+
+// export const setRoot = async () => {
+//   const provider = new ethers.providers.Web3Provider(window.ethereum);
+//   const signer = provider.getSigner();
+//   const contract = new ethers.Contract(
+//     CONTRACT_ADDRESS,
+//     CONTRACT_ABI,
+//     signer
+//   );
+//   const leaves = addrEth.map(v => keccak256(v));
+//   const tree = new MerkleTree(leaves, keccak256, { sort: true });
+//   const root = tree.getHexRoot();
+//   const setRoot = await contract.setRoot(root);
+//   console.log("setRoot", setRoot);
+// }
+
+// export const testTree = async () => {
+//   const provider = new ethers.providers.Web3Provider(window.ethereum);
+//   const signer = provider.getSigner();
+//   const contract = new ethers.Contract(
+//     CONTRACT_ADDRESS,
+//     CONTRACT_ABI,
+//     signer
+//   );
+    
+//   const sender = await getAccount();
+
+//   const leaves = addrEth.map(v => keccak256(v));
+//   const tree = new MerkleTree(leaves, keccak256, { sort: true });
+//   const root = tree.getHexRoot();
+
+//   const leaf = keccak256(sender);
+//   const proof = tree.getHexProof(leaf);
+//   try {
+//     console.log("Test good one", root, leaf, proof);
+//     console.log(await contract.verify(root, leaf, proof)) // true
+//   } catch (error) {
+//     console.log("Error testTree", error);
+//   }
+// }

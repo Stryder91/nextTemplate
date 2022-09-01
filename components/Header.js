@@ -2,6 +2,7 @@ import { MediaBadge } from './MediaBadge'
 import { ConnectMetamask } from './Metamask'
 import { NavHeader } from './NavHeader'
 import { DDown } from './Dropdown'
+import { Web3Modal } from './Web3Modal'
 
 
 export const Header = () => {
@@ -33,6 +34,7 @@ export const Header = () => {
 				</div>
 				<div className='hidden lg:block lg:flex'>
 					<MediaBadge />
+					<Web3Modal />
 					<ConnectMetamask />
 				</div>
 			</div>

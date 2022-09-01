@@ -1,0 +1,76 @@
+var fs = require('fs');
+
+const NFT_NUMBER = 7777;
+const IPFS_BASE = "https://ipfs.io/ipfs/Qme4GAmewiLVCew8hMFMfB7YwfYxkypKRb4XnjCRhLyd81/";
+// array to loop through : [0,1,2,3,...,100]
+const ln = [...Array(NFT_NUMBER).keys()];
+
+// array used to have randomness in json files generated
+const shuffleArray = [...Array(NFT_NUMBER).keys()].sort((a, b) => 0.5 - Math.random());;
+
+// base model for metadata
+var mdata = {
+  "name" : "Collection",
+  "description": "lorem lorem lorem lorem",
+  "image" : `${IPFS_BASE}1.png`,
+  "attributes": {
+    "jeans": null,
+    "rarity": "20"
+  }
+}
+// the value is the index from which we have that color
+// => red:5 means we have a red 'test' from index 5 during the loop
+const rarity = {
+  jeans: {
+    white_jean : 7777 * 0.50,
+    sand_jean : 2,
+    green_jean : 8,
+    magenta_jean : 13,
+    mustard_jean : 13,
+    blue_jean : 30,
+    black_jean : 34,
+  },
+  test : {
+    blue: 1,
+    yellow: 3,
+    red: 5,
+    green: 8,
+    grey: 12
+  }
+}
+  
+for (let i=0; i<ln.length; i++) {
+  let nameColl = "Collection-" + i;
+  let ipfs = `${IPFS_BASE}${i}.png`;
+
+  mdata.name = nameColl;
+  mdata.image = ipfs;
+
+  const popValue = shuffleArray.pop()
+
+  const r = rarity.test;
+  
+  if (i < r.blue){
+    mdata.attributes.jeans = "blue";
+  } 
+  if (i > r.blue && i <= r.yellow) {
+    mdata.attributes.jeans = "yellow";
+  } 
+  if (i > r.yellow && i <= r.red) {
+    mdata.attributes.jeans = "red";
+  } 
+  if (i > r.red && i <= r.green) {
+    mdata.attributes.jeans = "green";
+  }
+  if (i > r.green && i <= r.grey) {
+    mdata.attributes.jeans = "grey";
+  }
+        
+  const jsonified_dict = JSON.stringify(mdata);
+
+  // we are using pop value to generate randomness on metadata file
+  fs.writeFile(`metadata/json/${popValue}.json`, jsonified_dict, function(err, result) {
+    if(err) console.log('error', err);
+    console.log(result);
+  });
+}
