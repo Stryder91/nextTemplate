@@ -32,3 +32,13 @@ $ npm run dev
 
 
 
+# Networks
+
+Ethereum : 0x1 - 1
+Ropsten : 0x3 - 3 
+Rinkeby : 0x4 - 4
+Polygon :  0x89 - 137
+Mumbai : 0x13881 - 80001
+
+
+
